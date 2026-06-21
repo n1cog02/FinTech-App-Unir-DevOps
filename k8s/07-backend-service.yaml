@@ -4,7 +4,7 @@ metadata:
   name: backend-service
   namespace: fintech
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: fintech-backend
   ports:
