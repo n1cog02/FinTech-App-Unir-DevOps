@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fintech-frontend
+  namespace: fintech
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fintech-frontend
+  template:
+    metadata:
+      labels:
+        app: fintech-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: n1cog02/fintech-frontend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

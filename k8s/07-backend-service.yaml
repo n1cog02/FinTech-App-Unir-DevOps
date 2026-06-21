@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  namespace: fintech
+spec:
+  type: ClusterIP
+  selector:
+    app: fintech-backend
+  ports:
+    - port: 3001
+      targetPort: 3001
